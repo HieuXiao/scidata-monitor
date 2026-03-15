@@ -1,0 +1,64 @@
+# CẤU TRÚC THƯ MỤC DỰ ÁN SCIDATA-MONITOR
+# (Monorepo: Backend Python + Frontend React/Vite)
+
+scidata-monitor/
+|
+├── .gitignore
+├── LICENSE
+├── README.md
+├── docker-compose.yml
+├── PROJECT_STRUCTURE.txt          # File mô tả cấu trúc này
+|
+├── apps/
+|   |
+|   ├── backend/                   # Ứng dụng Python (API / dịch vụ)
+|   |   ├── requirements.txt
+|   |   └── app/
+|   |       ├── __init__.py
+|   |       ├── main.py            # Entry point backend
+|   |       ├── api/               # Định nghĩa API / routes
+|   |       |   └── __init__.py
+|   |       ├── core/              # Cấu hình, config
+|   |       |   └── __init__.py
+|   |       ├── crud/              # Thao tác CRUD
+|   |       |   └── __init__.py
+|   |       ├── db/                # Kết nối / session DB
+|   |       |   └── __init__.py
+|   |       ├── models/            # Model dữ liệu
+|   |       |   └── __init__.py
+|   |       └── services/          # Logic nghiệp vụ
+|   |           └── __init__.py
+|   |
+|   └── frontend/                  # Ứng dụng React + Vite + TypeScript
+|       ├── .gitignore
+|       ├── README.md
+|       ├── index.html
+|       ├── package.json
+|       ├── package-lock.json
+|       ├── vite.config.ts
+|       ├── tsconfig.json
+|       ├── tsconfig.app.json
+|       ├── tsconfig.node.json
+|       ├── eslint.config.js
+|       ├── public/
+|       |   ├── favicon.svg
+|       |   └── icons.svg
+|       └── src/
+|           ├── index.css
+|           ├── App.css
+|           ├── App.tsx
+|           ├── main.tsx
+|           └── assets/
+|               ├── react.svg
+|               ├── vite.svg
+|               └── hero.png
+|
+└── deployments/                   # Docker / triển khai
+    ├── Dockerfile.be              # Dockerfile backend
+    └── Dockerfile.fe              # Dockerfile frontend
+
+
+# BỎ QUA (không liệt kê trong cây trên):
+# - node_modules/
+# - .git/
+# - apps/frontend/.vite/           (cache/build Vite)
