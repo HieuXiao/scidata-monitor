@@ -6,8 +6,14 @@ scidata-monitor/
 ├── .gitignore
 ├── LICENSE
 ├── README.md
+├── requirements.txt              # Phụ thuộc Python (engine / script gốc)
 ├── docker-compose.yml
-├── PROJECT_STRUCTURE.txt          # File mô tả cấu trúc này
+├── PROJECT_STRUCTURE.txt         # File mô tả cấu trúc này
+|
+├── engine/                       # Engine thu thập / đồng bộ dữ liệu (Python)
+|   └── ingestion/
+|       ├── fetch_arxiv.py        # Lấy dữ liệu từ arXiv
+|       └── sync_to_graph.py     # Đồng bộ dữ liệu vào graph (Neo4j)
 |
 ├── apps/
 |   |
@@ -61,4 +67,5 @@ scidata-monitor/
 # BỎ QUA (không liệt kê trong cây trên):
 # - node_modules/
 # - .git/
+# - .venv/                         (virtualenv Python)
 # - apps/frontend/.vite/           (cache/build Vite)

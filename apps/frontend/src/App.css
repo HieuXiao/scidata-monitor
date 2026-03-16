@@ -225,6 +225,24 @@ body,
   box-shadow: 0 10px 20px rgba(15, 23, 42, 0.04);
 }
 
+.sdm-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.sdm-card-header h3 {
+  margin: 0;
+  font-size: 13px;
+}
+
+.sdm-card-subtitle {
+  font-size: 11px;
+  color: #9ca3af;
+}
+
 .sdm-metric-card h3 {
   margin: 0 0 8px;
   font-size: 13px;
@@ -265,6 +283,36 @@ body,
   font-size: 13px;
 }
 
+.sdm-chart {
+  margin-top: 8px;
+}
+
+.sdm-chart svg {
+  width: 100%;
+  height: 160px;
+  border-radius: 12px;
+  background: radial-gradient(circle at 0 0, #eff6ff, #ffffff);
+}
+
+.sdm-chart-line-a {
+  stroke: #2563eb;
+  stroke-width: 2.2;
+}
+
+.sdm-chart-line-b {
+  stroke: #06b6d4;
+  stroke-width: 2;
+}
+
+.sdm-chart-xaxis {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 6px;
+  font-size: 11px;
+  color: #9ca3af;
+  padding: 0 4px;
+}
+
 .sdm-simple-list {
   list-style: none;
   padding: 0;
@@ -279,6 +327,65 @@ body,
   display: flex;
   justify-content: space-between;
   gap: 8px;
+}
+
+.sdm-simple-list-ranked {
+  counter-reset: rank;
+}
+
+.sdm-simple-list-ranked li {
+  align-items: center;
+}
+
+.sdm-rank {
+  width: 18px;
+  font-size: 12px;
+  color: #6b7280;
+}
+
+.sdm-list-main {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  flex: 1;
+}
+
+.sdm-list-meta {
+  font-size: 11px;
+  color: #9ca3af;
+}
+
+.sdm-topic-trend {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.sdm-topic-spark {
+  width: 40px;
+  height: 26px;
+}
+
+.sdm-topic-spark-bar {
+  fill: rgba(59, 130, 246, 0.18);
+}
+
+.sdm-topic-spark-line {
+  stroke: #22c55e;
+  stroke-width: 1.6;
+}
+
+.sdm-simple-list-vertical li {
+  align-items: flex-start;
+}
+
+.sdm-link-button {
+  background: none;
+  border: none;
+  padding: 0;
+  font-size: 11px;
+  color: #2563eb;
+  cursor: pointer;
 }
 
 .sdm-tag {
@@ -416,4 +523,149 @@ body,
 .sdm-toggle-on span {
   margin-left: auto;
   margin-right: 2px;
+}
+
+/* ── Section title with icon ─────────────────────────── */
+.sdm-section-title {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin: 0;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-h);
+}
+
+.sdm-section-icon {
+  font-size: 14px;
+  line-height: 1;
+}
+
+.sdm-section-icon-amber { color: #f59e0b; }
+.sdm-section-icon-purple { color: #8b5cf6; }
+
+/* ── Latest Breakthroughs list ───────────────────────── */
+.sdm-bt-list {
+  list-style: none;
+  margin: 12px 0 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.sdm-bt-item {
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  padding: 10px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.sdm-bt-title {
+  margin: 0;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-h);
+  line-height: 1.45;
+}
+
+.sdm-bt-footer {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.sdm-bt-date {
+  font-size: 11px;
+  color: #9ca3af;
+}
+
+/* Domain tag pills */
+.sdm-domain-tag {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 500;
+}
+
+.sdm-domain-tag-indigo {
+  background: #e0e7ff;
+  color: #4338ca;
+}
+
+.sdm-domain-tag-teal {
+  background: #ccfbf1;
+  color: #0f766e;
+}
+
+.sdm-domain-tag-purple {
+  background: #ede9fe;
+  color: #6d28d9;
+}
+
+/* ── Most Influential Papers list ────────────────────── */
+.sdm-paper-list {
+  list-style: none;
+  margin: 12px 0 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.sdm-paper-item {
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  padding: 10px 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.sdm-paper-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  flex: 1;
+  min-width: 0;
+}
+
+.sdm-paper-title {
+  margin: 0;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-h);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.sdm-paper-meta {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+}
+
+.sdm-paper-authors {
+  color: #9ca3af;
+}
+
+.sdm-journal {
+  font-weight: 500;
+}
+
+.sdm-journal-teal  { color: #0d9488; }
+.sdm-journal-blue  { color: #2563eb; }
+.sdm-journal-green { color: #16a34a; }
+
+.sdm-paper-citations {
+  font-size: 12px;
+  color: #6b7280;
+  white-space: nowrap;
+  flex-shrink: 0;
 }
