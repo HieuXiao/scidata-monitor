@@ -1,0 +1,33 @@
+version: '3.8'
+
+services:
+  # Database lưu trữ metadata (Papers, Authors, Institutions)
+  postgres:
+    image: postgres:15-alpine
+    container_name: scidata_postgres
+    restart: always
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: password123
+      POSTGRES_DB: scidata_db
+    ports:
+      - "5433:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+  # Database lưu trữ mạng lưới cộng tác (Graph)
+  neo4j:
+    image: neo4j:5-community
+    container_name: scidata_neo4j
+    restart: always
+    ports:
+      - "7474:7474" # Giao diện Browser
+      - "7687:7687" # Cổng kết nối code (Bolt)
+    environment:
+      NEO4J_AUTH: neo4j/password123
+    volumes:
+      - neo4jdata:/data
+
+volumes:
+  pgdata:
+  neo4jdata:
