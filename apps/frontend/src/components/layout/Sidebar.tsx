@@ -35,14 +35,6 @@ const SECTION_LABELS: Record<NavItem['section'], string> = {
 export function Sidebar() {
   return (
     <aside className="sdm-sidebar">
-      <div className="sdm-sidebar-header">
-        <div className="sdm-logo-circle">S</div>
-        <div className="sdm-logo-text">
-          <span className="sdm-logo-title">SciData Monitor</span>
-          <span className="sdm-logo-subtitle">Global Research Intelligence</span>
-        </div>
-      </div>
-
       <nav className="sdm-nav">
         {(Object.keys(SECTION_LABELS) as NavItem['section'][]).map((section) => {
           const items = NAV_ITEMS.filter((item) => item.section === section)
